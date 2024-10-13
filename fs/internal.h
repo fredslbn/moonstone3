@@ -76,6 +76,9 @@ int do_linkat(int olddfd, const char __user *oldname, int newdfd,
 /*
  * namespace.c
  */
+#if !defined(KSU_UMOUNT) && defined(CONFIG_KSU_SUSFS)
+int path_umount(struct path *path, int flags);
+#endif
 extern void *copy_mount_options(const void __user *);
 extern char *copy_mount_string(const void __user *);
 
