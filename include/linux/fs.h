@@ -766,6 +766,10 @@ struct inode {
 #endif
 
 	void			*i_private; /* fs or device private pointer */
+#ifdef CONFIG_KSU_SUSFS_SUS_KSTAT
+	u64 android_kabi_reserved1;
+	u64 android_kabi_reserved2;
+#endif
 
 	ANDROID_KABI_RESERVE(1);
 	ANDROID_KABI_RESERVE(2);
@@ -1607,7 +1611,11 @@ struct super_block {
 
 	spinlock_t		s_inode_wblist_lock;
 	struct list_head	s_inodes_wb;	/* writeback inodes */
-
+#ifdef CONFIG_KSU_SUSFS_SUS_KSTAT
+	u64 android_kabi_reserved1;
+	u64 android_kabi_reserved2;
+	u64 android_kabi_reserved3;
+#endif
 	ANDROID_KABI_RESERVE(1);
 	ANDROID_KABI_RESERVE(2);
 	ANDROID_KABI_RESERVE(3);
