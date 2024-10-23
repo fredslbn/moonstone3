@@ -93,8 +93,6 @@ struct user_namespace {
 	u64 android_kabi_reserved2;
 #endif
 
-	ANDROID_KABI_RESERVE(1);
-	ANDROID_KABI_RESERVE(2);
 } __randomize_layout;
 
 struct ucounts {
