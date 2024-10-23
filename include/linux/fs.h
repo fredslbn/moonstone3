@@ -770,9 +770,6 @@ struct inode {
 	u64 android_kabi_reserved1;
 	u64 android_kabi_reserved2;
 #endif
-
-	ANDROID_KABI_RESERVE(1);
-	ANDROID_KABI_RESERVE(2);
 } __randomize_layout;
 
 struct timespec64 timestamp_truncate(struct timespec64 t, struct inode *inode);
@@ -1616,10 +1613,7 @@ struct super_block {
 	u64 android_kabi_reserved2;
 	u64 android_kabi_reserved3;
 #endif
-	ANDROID_KABI_RESERVE(1);
-	ANDROID_KABI_RESERVE(2);
-	ANDROID_KABI_RESERVE(3);
-	ANDROID_KABI_RESERVE(4);
+
 } __randomize_layout;
 
 /* Helper functions so that in most cases filesystems will
